@@ -8,4 +8,7 @@
 # Degree Program
 - BS Computer Science
 # Key Takeaways
-- 
+- how to implement a function in javascript
+- how to use nodejs
+- equality in JS
+- Scoping in JS
