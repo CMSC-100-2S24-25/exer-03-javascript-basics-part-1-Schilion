@@ -30,6 +30,26 @@ function reversePassword(password) {
     return reversed;
 }
 
+// function to store the password in an object
+function storePassword(name, password1, password2) {
+    let isValid = validatePassword(password1, password2);
+    
+    return {
+        name: name,
+        newpassword: isValid ? reversePassword(password1) : password1 // reverse if valid, otherwise store as is
+    };
+}
 
-console.log(validatePassword("Timothy24", "Timothy24"));
-console.log(reversePassword("Timothy24"));
+
+
+
+// test cases
+
+console.log(validatePassword("Timothy24", "Timothy24")); // true
+console.log(reversePassword("Timothy24")); // 42yhtomiT
+console.log(validatePassword("Hello1234", "Hello1234")); // true
+console.log(validatePassword("hello1234", "hello1234")); // false
+console.log(validatePassword("HELLO1234", "HELLO1234")); // false
+console.log(reversePassword("Hello1234")); // "4321olleH"
+console.log(storePassword("Timothy", "Hello1234", "Hello1234")); // { name: 'Timothy', newpassword: '4321olleH' }
+console.log(storePassword("Timothy", "hello1234", "hello1234")); // { name: 'Timothy', newpassword: 'hello1234' }
