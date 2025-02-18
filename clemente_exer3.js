@@ -1,4 +1,4 @@
-//function to validate if two passwords are the same
+// function to validate if two passwords are the same
 function validatePassword(password1, password2){
     
     if (password1 !== password2) return false; // returns false if passwords don't match
@@ -18,5 +18,18 @@ function validatePassword(password1, password2){
     
 }
 
+// function to reverse the password
+function reversePassword(password) {
+    let reversed = "";
+    
+    // iterate backwards through the string and build the reversed password
+    for (let i = password.length - 1; i >= 0; i--) {
+        reversed += password[i];
+    }
+    
+    return reversed;
+}
+
 
 console.log(validatePassword("Timothy24", "Timothy24"));
+console.log(reversePassword("Timothy24"));
